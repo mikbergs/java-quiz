@@ -1,7 +1,6 @@
 /*
 *	GameEngine.java
 *	Author:	Mikael BergstrÃ¶m
-*	Email: mikael@bergstrom.it
 *	Version: 0.1 2016-08-23
 */
 import java.io.IOException;
@@ -23,7 +22,7 @@ public class GameEngine {
 		
 	}
 	public static void main(String[] args) throws IOException{
-		System.out.println("Mata hur många spelare ni är, alla spelare får svara på frågorna, så tjuvkika inte");
+		System.out.println("Mata hur mÃ¥nga spelare ni Ã¤r, alla spelare fÃ¥r svara pÃ¥ frÃ¥gorna, sÃ¥ tjuvkika inte");
 		Scanner input = new Scanner(System.in);
 		GameEngine gameEngine = new GameEngine(input.nextInt());
 
@@ -38,10 +37,10 @@ public class GameEngine {
 	public void addPlayers(int nrPlayers){
 		playerArray = new Player[nrPlayers];
 		Scanner input = new Scanner(System.in);
-		System.out.println("Skriv in era namn följt av enter.");
+		System.out.println("Skriv in era namn fÃ¶ljt av enter.");
 		for (int i = 0; i <	nrPlayers; i++ ){
 			playerArray[i] = new Player(input.nextLine());
-			System.out.println("Välkommen " + playerArray[i].getName());
+			System.out.println("VÃ¤lkommen " + playerArray[i].getName());
 		}
 	}
 	
@@ -75,9 +74,9 @@ public class GameEngine {
 		if(scoreArray.get(0)==scoreArray.get(1)){
 			System.out.println("Oavgjort!");
 		}else {
-			System.out.println("Spelet över. Grattis " + winner.getName()+ " du vann!");
+			System.out.println("Spelet Ã¶ver. Grattis " + winner.getName()+ " du vann!");
 		}
-		System.out.println("----POÄNGTABELL----");
+		System.out.println("----POÃ„NGTABELL----");
 		for(int i = 0; i < nrPlayers; i++){
 			System.out.println(i+1 + ". " + playerArray[i].getName()+ " " +scoreArray.get(i)+"p");
 			
@@ -123,11 +122,11 @@ public class GameEngine {
 	String answer = input.nextLine();
 	answer.toUpperCase();
 		if (answer.equals(correctAnswer)){
-			System.out.println("Rätt svar!");
+			System.out.println("RÃ¤tt svar!");
 			playerArray[playerID].addPoint();
 		}
 		else if (!(answer.equals("1")||answer.equals("x") || answer.equals("2"))){
-			System.out.println("Du kan välja mellan 1, X, och 2. Försök igen.");
+			System.out.println("Du kan vÃ¤lja mellan 1, X, och 2. FÃ¶rsÃ¶k igen.");
 			fetchAnswer(correctAnswer);
 		}
 		else {
