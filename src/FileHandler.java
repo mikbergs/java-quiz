@@ -8,7 +8,6 @@ import java.util.ArrayList;
 /*
 *	FileHandler.java
 *	Author:	Mikael Bergström
-*	Email: mikael@bergstrom.it
 *	Version: 0.1 2016-08-23
 */
 public class FileHandler {
